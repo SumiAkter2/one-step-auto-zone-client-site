@@ -6,11 +6,27 @@ import banner4 from "../../assets/images/banner/6.jpg";
 const Banner = () => {
   return (
     <div>
-      <div className="carousel w-full">
+      <div className="carousel w-full text-white">
         <div id="slide1" className="carousel-item relative w-full">
           <img src={banner1} alt="banner-img" className="w-full max-h-screen" />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide4" className="btn btn-circle">
+          <div className="absolute flex justify-end transform -translate-y-1/2 left-5  top-1/4 ">
+            <h1 className="text-6xl font-bold ">
+              Lorem ipsum dolor <br /> sit amet <br />
+              elit. Amet, !
+            </h1>
+          </div>
+          <div className="absolute flex justify-end transform -translate-y-1/2 left-5  top-1/2 w-1/2">
+            <p className="text-xl">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
+              laborum quasi earum ad architecto architecto
+            </p>
+          </div>
+          <div className="absolute flex justify-end transform -translate-y-1/2 left-5  bottom-1/4 mt-6">
+                      <button className="btn btn-secondary">Discover More</button> <button className=" ml-6 btn btn-primary btn-outline
+            ">Latest Project</button>
+          </div>
+          <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
+            <a href="#slide4" className="btn btn-circle mr-5">
               ❮
             </a>
             <a href="#slide2" className="btn btn-circle">
