@@ -11,7 +11,7 @@ const Header = () => {
   );
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-base-100 h-20 mb-12">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -37,7 +37,7 @@ const Header = () => {
               {menuItems}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">
+          <a href="/" className="flex justify-center items-center uppercase text-xl font-bold">
             <img src={logo} alt="" className="w-20" />
             One Step Auto Zone
           </a>
@@ -46,7 +46,9 @@ const Header = () => {
           <ul className="menu menu-horizontal px-1">{menuItems}</ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Get started</a>
+          <a href="/" className="btn btn-outline btn-secondary">
+            Appointment
+          </a>
         </div>
       </div>
     </div>

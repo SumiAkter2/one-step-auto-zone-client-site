@@ -1,9 +1,10 @@
 import React from "react";
+import Banner from "./Banner";
 
 function Home() {
   return (
     <div>
-      <h1>One step auto Zone</h1>
+      <Banner />
     </div>
   );
 }
