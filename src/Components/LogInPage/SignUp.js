@@ -1,6 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import img from "../../assets/images/login/login.svg";
+import { AuthContext } from "../../Context/AuthProvider";
 const SignUp = () => {
+  const { createUser } = useContext(AuthContext);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        alert("successfully sign Up");
+        e.target.reset();
+      })
+      .catch((err) => console.error(err));
+  };
+
   return (
     <div className="hero min-h-screen mb-12">
       <div className="hero-content flex-col lg:flex-row grid  grid-cols-2 gap-20">
@@ -9,7 +27,7 @@ const SignUp = () => {
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl  shadow-slate-400 bg-base-100 p-6">
           <div className="card-body">
-            <form className="form-control">
+            <form className="form-control" onSubmit={handleSubmit}>
               <h1 className="text-center text-4xl font-bold mb-6">
                 Please Sign Up
               </h1>
@@ -18,6 +36,7 @@ const SignUp = () => {
               </label>
               <input
                 type="text"
+                name="name"
                 placeholder="Name"
                 className="input input-bordered"
               />
@@ -26,6 +45,7 @@ const SignUp = () => {
               </label>
               <input
                 type="text"
+                name="email"
                 placeholder="email"
                 className="input input-bordered"
               />
@@ -35,6 +55,7 @@ const SignUp = () => {
               </label>
               <input
                 type="text"
+                name="password"
                 placeholder="password"
                 className="input input-bordered"
               />
