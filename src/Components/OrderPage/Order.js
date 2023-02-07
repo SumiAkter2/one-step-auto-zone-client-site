@@ -4,16 +4,24 @@ import checkoutImg from "../../assets/images/checkout/checkout.png";
 import OrderInfo from "./OrderInfo";
 
 const Order = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const [orders, setOrders] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/orders?email=${user?.email}`)
-      .then((res) => res.json())
+    fetch(`http://localhost:5000/orders?email=${user?.email}`, {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("autoZone-token")}`,
+      },
+    })
+      .then((res) => {
+        if (res.status === 401 || res.status === 403) {
+          logOut();
+        }
+        return res.json();
+      })
       .then((data) => setOrders(data));
   }, [user?.email]);
 
   const handleDelete = (id) => {
-    console.log("dsgfaf");
     const proceed = window.confirm("Sure to Delete?");
     if (proceed) {
       fetch(`http://localhost:5000/orders/${id}`, {
