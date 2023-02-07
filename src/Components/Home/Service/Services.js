@@ -1,5 +1,6 @@
 import React from "react";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 const Services = ({ service }) => {
   return (
     <div>
@@ -19,9 +20,12 @@ const Services = ({ service }) => {
             </p>
           </div>
 
-          <button className="btn btn-primary">
-            <BsFillArrowRightCircleFill size="25px" color="#FF3811" />
-          </button>
+          <Link to={`/checkout/${service.service_id}`}>
+            {" "}
+            <button className="btn btn-primary">
+              <BsFillArrowRightCircleFill size="25px" color="#FF3811" />
+            </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -1,4 +1,3 @@
-import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useContext } from "react";
 import img from "../../assets/images/login/login.svg";
 import { AuthContext } from "../../Context/AuthProvider";
