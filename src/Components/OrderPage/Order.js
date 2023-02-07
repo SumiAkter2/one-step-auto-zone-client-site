@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Context/AuthProvider";
 import checkoutImg from "../../assets/images/checkout/checkout.png";
 import OrderInfo from "./OrderInfo";
+import { coolGray } from "tailwindcss/colors";
 
 const Order = () => {
   const { user } = useContext(AuthContext);
@@ -11,6 +12,25 @@ const Order = () => {
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [user?.email]);
+
+  const handleDelete = (id) => {
+    console.log("dsgfaf");
+    const proceed = window.confirm("Sure to Delete?");
+    if (proceed) {
+      fetch(`http://localhost:5000/orders/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            alert("dleete");
+            const remaining = orders.filter((odr) => odr._id !== id);
+            setOrders(remaining);
+          }
+          console.log(data, "dkkii");
+        });
+    }
+  };
   return (
     <div>
       <div className="carousel-item relative w-full  mb-12">
@@ -31,9 +51,7 @@ const Order = () => {
             <thead>
               <tr>
                 <th>
-                  <label>
-                   X
-                  </label>
+                  <label>X</label>
                 </th>
                 <th>Name</th>
                 <th>Your Info</th>
@@ -43,7 +61,11 @@ const Order = () => {
             </thead>
             <tbody>
               {orders.map((order) => (
-                <OrderInfo key={order._id} order={order}></OrderInfo>
+                <OrderInfo
+                  key={order._id}
+                  order={order}
+                  handleDelete={handleDelete}
+                ></OrderInfo>
               ))}
             </tbody>
           </table>
