@@ -20,7 +20,7 @@ const Services = ({ service }) => {
             </p>
           </div>
 
-          <Link to={`/checkout/${service.service_id}`}>
+          <Link to={`/checkout/${service._id}`}>
             {" "}
             <button className="btn btn-primary">
               <BsFillArrowRightCircleFill size="25px" color="#FF3811" />
