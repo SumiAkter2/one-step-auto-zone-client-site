@@ -7,6 +7,12 @@ const Header = () => {
       <li className="font-semibold">
         <Link to="/">Home</Link>
       </li>
+      <li className="font-semibold">
+        <Link to="/logIn">Log IN</Link>
+      </li>
+      <li className="font-semibold">
+        <Link to="/signUp">Sign Up</Link>
+      </li>
     </>
   );
   return (
@@ -37,7 +43,10 @@ const Header = () => {
               {menuItems}
             </ul>
           </div>
-          <a href="/" className="flex justify-center items-center uppercase text-xl font-bold">
+          <a
+            href="/"
+            className="flex justify-center items-center uppercase text-xl font-bold"
+          >
             <img src={logo} alt="" className="w-20" />
             One Step Auto Zone
           </a>
