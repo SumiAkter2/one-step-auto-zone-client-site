@@ -1,10 +1,14 @@
 import React, { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import img from "../../assets/images/login/login.svg";
 import { AuthContext } from "../../Context/AuthProvider";
 const Login = () => {
   const { logIn } = useContext(AuthContext);
+  const location = useLocation();
   const navigate = useNavigate();
+
+  const from = location.state?.from?.pathname || "/";
+
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -18,6 +22,7 @@ const Login = () => {
         alert("login successfully");
       })
       .catch((err) => console.error(err));
+    navigate(from, { replace: true });
   };
   return (
     <div>
@@ -46,7 +51,7 @@ const Login = () => {
                   <span className="label-text">Password</span>
                 </label>
                 <input
-                  type="text"
+                  type="password"
                   name="password"
                   placeholder="password"
                   className="input input-bordered"
