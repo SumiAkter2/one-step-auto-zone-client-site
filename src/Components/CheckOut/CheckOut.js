@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
-import { coolGray } from "tailwindcss/colors";
 import checkoutImg from "../../assets/images/checkout/checkout.png";
 import { AuthContext } from "../../Context/AuthProvider";
 const CheckOut = () => {
   const service = useLoaderData();
-  const user = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
+  console.log(user?.email);
   const handlePlaceOrder = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -22,6 +22,19 @@ const CheckOut = () => {
       email,
       message,
     };
+    fetch("http://localhost:5000/order", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(order),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        alert("added successfully");
+      })
+      .catch((err) => console.log(err));
     console.log(order);
   };
   return (
@@ -72,8 +85,8 @@ const CheckOut = () => {
               type="text"
               placeholder="Your email"
               defaultValue={user?.email}
-              className="input input-ghost w-full  input-bordered"
               readOnly
+              className="input input-ghost w-full  input-bordered"
             />
           </div>
           <br />

@@ -3,6 +3,7 @@ import Home from "../../Components/Home/Home";
 import Login from "../../Components/LogInPage/Login";
 import SignUp from "../../Components/LogInPage/SignUp";
 import NotFound from "../../Components/NotFound/NotFound";
+import Order from "../../Components/OrderPage/Order";
 import Main from "../../Layout/Main";
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
         element: <CheckOut />,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/services/${params.id}`),
+      },
+      {
+        path: "/orders",
+        element: <Order />,
       },
       {
         path: "*",
