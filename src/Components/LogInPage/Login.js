@@ -27,13 +27,13 @@ const Login = () => {
           body: JSON.stringify(currentUser),
         })
           .then((res) => res.json())
-          .then((data) => console.log(data))
+          .then((data) => {
+            localStorage.setItem("autoZone-token", data.token);
+            navigate(from, { replace: true });
+          })
           .catch((err) => console.log(err));
-        console.log(user);
-        alert("login successfully");
       })
-      .catch((err) => console.error(err));
-    navigate(from, { replace: true });
+      
   };
   return (
     <div>
