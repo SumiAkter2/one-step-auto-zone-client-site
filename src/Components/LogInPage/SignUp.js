@@ -1,8 +1,14 @@
 import React, { useContext } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import img from "../../assets/images/login/login.svg";
 import { AuthContext } from "../../Context/AuthProvider";
 const SignUp = () => {
   const { createUser } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const from = location.state?.from?.pathname || "/";
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -17,6 +23,7 @@ const SignUp = () => {
         e.target.reset();
       })
       .catch((err) => console.error(err));
+    navigate(from, { replace: true });
   };
 
   return (
