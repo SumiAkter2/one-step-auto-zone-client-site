@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Context/AuthProvider";
 import checkoutImg from "../../assets/images/checkout/checkout.png";
 import OrderInfo from "./OrderInfo";
-import { coolGray } from "tailwindcss/colors";
 
 const Order = () => {
   const { user } = useContext(AuthContext);
@@ -30,6 +29,24 @@ const Order = () => {
           console.log(data, "dkkii");
         });
     }
+  };
+  const handleStatusUpdate = (id) => {
+    fetch(`http://localhost:5000/orders/${id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ status: "Approve" }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        const remaining = orders.filter((odr) => odr._id !== id);
+        const approve = orders.find((odr) => odr._id === id);
+        approve.status = "Approve";
+        const newOrder = [approve, ...remaining];
+
+        setOrders(newOrder);
+      });
   };
   return (
     <div>
@@ -65,6 +82,7 @@ const Order = () => {
                   key={order._id}
                   order={order}
                   handleDelete={handleDelete}
+                  handleStatusUpdate={handleStatusUpdate}
                 ></OrderInfo>
               ))}
             </tbody>
