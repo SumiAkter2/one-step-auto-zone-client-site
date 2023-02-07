@@ -5,6 +5,7 @@ import SignUp from "../../Components/LogInPage/SignUp";
 import NotFound from "../../Components/NotFound/NotFound";
 import Order from "../../Components/OrderPage/Order";
 import Main from "../../Layout/Main";
+import PrivateRoute from "./PrivateRoute";
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -27,7 +28,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/checkout/:id",
-        element: <CheckOut />,
+        element: (
+          <PrivateRoute>
+            <CheckOut />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/services/${params.id}`),
       },

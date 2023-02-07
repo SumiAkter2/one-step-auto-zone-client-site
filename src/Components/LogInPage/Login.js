@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import img from "../../assets/images/login/login.svg";
 import { AuthContext } from "../../Context/AuthProvider";
 const Login = () => {
   const { logIn } = useContext(AuthContext);
+  const navigate = useNavigate();
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
