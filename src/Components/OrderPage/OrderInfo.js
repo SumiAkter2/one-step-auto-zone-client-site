@@ -57,7 +57,7 @@ const OrderInfo = ({ order, handleDelete, handleStatusUpdate }) => {
       <th>
         <button
           onClick={() => handleStatusUpdate(_id)}
-          className="btn btn-secondary btn-sm rounded-full"
+          className="btn btn-secondary btn-sm btn-outline rounded-full"
         >
           {status ? status : "Pending"}
         </button>

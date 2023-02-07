@@ -44,7 +44,6 @@ const Order = () => {
         const approve = orders.find((odr) => odr._id === id);
         approve.status = "Approve";
         const newOrder = [approve, ...remaining];
-
         setOrders(newOrder);
       });
   };
@@ -61,10 +60,9 @@ const Order = () => {
         </div>
       </div>
 
-      <div>
-        <div className="overflow-x-auto w-full">
+      <div className="my-6">
+        <div className="overflow-x-auto w-full shadow-2xl">
           <table className="table w-full">
-            {/* //<!-- head --> */}
             <thead>
               <tr>
                 <th>
