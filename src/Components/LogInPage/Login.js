@@ -1,6 +1,23 @@
-import React from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import React, { useContext } from "react";
 import img from "../../assets/images/login/login.svg";
+import { AuthContext } from "../../Context/AuthProvider";
 const Login = () => {
+  const { logIn } = useContext(AuthContext);
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    logIn(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        alert("login successfully");
+      })
+      .catch((err) => console.error(err));
+  };
   return (
     <div>
       <div className="hero min-h-screen mb-12">
@@ -10,7 +27,7 @@ const Login = () => {
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl  shadow-slate-400 bg-base-100 p-6">
             <div className="card-body">
-              <form className="form-control">
+              <form className="form-control" onSubmit={handleLogin}>
                 <h1 className="text-center text-4xl font-bold mb-6">
                   Log In Now
                 </h1>
@@ -20,6 +37,7 @@ const Login = () => {
                 <input
                   type="text"
                   placeholder="email"
+                  name="email"
                   className="input input-bordered"
                 />
 
@@ -28,6 +46,7 @@ const Login = () => {
                 </label>
                 <input
                   type="text"
+                  name="password"
                   placeholder="password"
                   className="input input-bordered"
                 />
