@@ -18,7 +18,11 @@ const SignUp = () => {
     createUser(email, password)
       .then((result) => {
         const user = result.user;
+
         console.log(user);
+        const currentUser = { email: user.email };
+fetch('')
+
         alert("successfully sign Up");
         e.target.reset();
       })
