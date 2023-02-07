@@ -17,10 +17,13 @@ const Service = () => {
         corporis cum hic doloremque. Esse nisi cupiditate, blanditiis alias
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-12 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-12 gap-4">
         {services.map((service) => (
           <Services key={service._id} service={service}></Services>
         ))}
+      </div>
+      <div className="flex justify-center items-center mb-12">
+        <button className="btn btn-outline btn-secondary">More Service</button>
       </div>
     </div>
   );
