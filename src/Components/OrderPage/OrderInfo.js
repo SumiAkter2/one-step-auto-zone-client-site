@@ -13,7 +13,7 @@ const OrderInfo = ({ order, handleDelete, handleStatusUpdate }) => {
   } = order;
   const [orderService, setOrderService] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/services/${serviceId}`)
+    fetch(`https://one-step-auto-zone-server.vercel.app/services/${serviceId}`)
       .then((res) => res.json())
       .then((data) => setOrderService(data));
   }, [serviceId]);

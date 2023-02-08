@@ -22,7 +22,7 @@ const CheckOut = () => {
       email,
       message,
     };
-    fetch("http://localhost:5000/order", {
+    fetch("https://one-step-auto-zone-server.vercel.app/order", {
       method: "POST",
       headers: {
         "content-type": "application/json",

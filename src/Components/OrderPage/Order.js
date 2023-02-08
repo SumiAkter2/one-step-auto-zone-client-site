@@ -7,11 +7,14 @@ const Order = () => {
   const { user, logOut } = useContext(AuthContext);
   const [orders, setOrders] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/orders?email=${user?.email}`, {
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("autoZone-token")}`,
-      },
-    })
+    fetch(
+      `https://one-step-auto-zone-server.vercel.app/orders?email=${user?.email}`,
+      {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("autoZone-token")}`,
+        },
+      }
+    )
       .then((res) => {
         if (res.status === 401 || res.status === 403) {
           logOut();
@@ -24,7 +27,7 @@ const Order = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Sure to Delete?");
     if (proceed) {
-      fetch(`http://localhost:5000/orders/${id}`, {
+      fetch(`https://one-step-auto-zone-server.vercel.app/orders/${id}`, {
         method: "DELETE",
         headers: {
           authorization: `Bearer ${localStorage.getItem("autoZone-token")}`,
@@ -41,7 +44,7 @@ const Order = () => {
     }
   };
   const handleStatusUpdate = (id) => {
-    fetch(`http://localhost:5000/orders/${id}`, {
+    fetch(`https://one-step-auto-zone-server.vercel.app/orders/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

@@ -18,7 +18,7 @@ const Login = () => {
     logIn(email, password).then((result) => {
       const user = result.user;
       const currentUser = { email: user.email };
-      fetch("http://localhost:5000/jwt", {
+      fetch("https://one-step-auto-zone-server.vercel.app/jwt", {
         method: "POST",
         headers: {
           "content-type": "application/json",
