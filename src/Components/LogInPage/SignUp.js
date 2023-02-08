@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { setAuthToken } from "../../api/Auth";
 import img from "../../assets/images/login/login.svg";
 import { AuthContext } from "../../Context/AuthProvider";
 import SocialLogin from "../Share/SocialLogIn/SocialLogin";
@@ -13,16 +14,29 @@ const SignUp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
-    const name = form.name.value;
+    // const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    createUser(email, password)
-      .then((result) => {
-        const user = result.user;
-        e.target.reset();
+    createUser(email, password).then((result) => {
+      const user = result.user;
+      const currentUser = {
+        email: user.email,
+      };
+      fetch("https://one-step-auto-zone-server.vercel.app/jwt", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(currentUser),
       })
-      .catch((err) => console.error(err));
-    navigate(from, { replace: true });
+        .then((res) => res.json())
+        .then((data) => {
+          localStorage.setItem("autoZone-token", data.token);
+          navigate(from, { replace: true });
+        })
+        .catch((err) => console.log(err));
+    });
+    e.target.reset();
   };
 
   return (
