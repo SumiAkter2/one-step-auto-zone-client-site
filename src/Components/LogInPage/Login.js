@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import img from "../../assets/images/login/login.svg";
 import { AuthContext } from "../../Context/AuthProvider";
+import SocialLogin from "../Share/SocialLogIn/SocialLogin";
 const Login = () => {
   const { logIn } = useContext(AuthContext);
   const location = useLocation();
@@ -78,14 +79,12 @@ const Login = () => {
                   <button className="btn btn-secondary ">Login</button>
                 </div>
               </form>
-              <div className="divider ">Or Sign In With</div>
-              <button className="btn btn-secondary btn-outline">Google</button>
-
+              <SocialLogin />
               <p className="text-sm">
                 New to Here?{" "}
                 <a className="text-secondary" href="/signUp">
                   Please Sign Up
-                </a>{" "}
+                </a>
               </p>
             </div>
           </div>

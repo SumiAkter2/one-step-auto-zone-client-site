@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import img from "../../assets/images/login/login.svg";
 import { AuthContext } from "../../Context/AuthProvider";
+import SocialLogin from "../Share/SocialLogIn/SocialLogin";
 const SignUp = () => {
   const { createUser } = useContext(AuthContext);
   const location = useLocation();
@@ -69,8 +70,7 @@ const SignUp = () => {
                 <button className="btn btn-secondary ">Sign Up</button>
               </div>
             </form>
-            <div className="divider ">Or Sign In With</div>
-            <button className="btn btn-secondary btn-outline">Google</button>
+            <SocialLogin />
             <div className="divider ">Or </div>
             <p className="">
               Have an account?
