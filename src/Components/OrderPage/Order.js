@@ -19,22 +19,24 @@ const Order = () => {
         return res.json();
       })
       .then((data) => setOrders(data));
-  }, [user?.email]);
+  }, [user?.email, logOut]);
 
   const handleDelete = (id) => {
     const proceed = window.confirm("Sure to Delete?");
     if (proceed) {
       fetch(`http://localhost:5000/orders/${id}`, {
         method: "DELETE",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("autoZone-token")}`,
+        },
       })
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount > 0) {
-            alert("dleete");
+            alert("Delete");
             const remaining = orders.filter((odr) => odr._id !== id);
             setOrders(remaining);
           }
-          console.log(data, "dkkii");
         });
     }
   };
@@ -43,6 +45,7 @@ const Order = () => {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("autoZone-token")}`,
       },
       body: JSON.stringify({ status: "Approve" }),
     })
@@ -67,7 +70,9 @@ const Order = () => {
           </h1>
         </div>
       </div>
-
+      <div>
+        <h1 className="text-4xl text-center my-4">{orders.length} Orders</h1>
+      </div>
       <div className="my-6">
         <div className="overflow-x-auto w-full shadow-2xl">
           <table className="table w-full">

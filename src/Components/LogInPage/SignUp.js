@@ -18,12 +18,6 @@ const SignUp = () => {
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-
-        console.log(user);
-        const currentUser = { email: user.email };
-fetch('')
-
-        alert("successfully sign Up");
         e.target.reset();
       })
       .catch((err) => console.error(err));
@@ -65,7 +59,7 @@ fetch('')
                 <span className="label-text">Password</span>
               </label>
               <input
-                type="password"
+                type="text"
                 name="password"
                 placeholder="password"
                 className="input input-bordered"

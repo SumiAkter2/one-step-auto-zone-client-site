@@ -15,25 +15,24 @@ const Login = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    logIn(email, password)
-      .then((result) => {
-        const user = result.user;
-        const currentUser = { email: user.email };
-        fetch("http://localhost:5000/jwt", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(currentUser),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            localStorage.setItem("autoZone-token", data.token);
-            navigate(from, { replace: true });
-          })
-          .catch((err) => console.log(err));
+    logIn(email, password).then((result) => {
+      const user = result.user;
+      const currentUser = { email: user.email };
+      fetch("http://localhost:5000/jwt", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(currentUser),
       })
-      
+        .then((res) => res.json())
+        .then((data) => {
+          localStorage.setItem("autoZone-token", data.token);
+          navigate(from, { replace: true });
+        })
+        .catch((err) => console.log(err));
+    });
+    e.target.reset();
   };
   return (
     <div>
@@ -62,14 +61,14 @@ const Login = () => {
                   <span className="label-text">Password</span>
                 </label>
                 <input
-                  type="password"
+                  type="text"
                   name="password"
                   placeholder="password"
                   className="input input-bordered"
                 />
                 <label className="label">
                   <a href="/" className="label-text-alt link link-hover">
-                    Forgot password?{" "}
+                    Forgot password?
                     <a className="text-secondary" href="/">
                       Please Reset
                     </a>
