@@ -3,8 +3,9 @@ import Services from "./Services";
 
 const Service = () => {
   const [services, setServices] = useState([]);
+  const [isAsc, setIsAsc] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch(`http://localhost:5000/services?order=${isAsc ? "asc" : "desc"}`)
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
