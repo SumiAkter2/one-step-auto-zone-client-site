@@ -4,7 +4,7 @@ import Services from "./Services";
 const Service = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("https://one-step-auto-zone-server.vercel.app/services")
+    fetch("http://localhost:5000/services")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
