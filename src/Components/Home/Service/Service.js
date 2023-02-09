@@ -8,7 +8,7 @@ const Service = () => {
   const searchRef = useRef();
   useEffect(() => {
     fetch(
-      `http://localhost:5000/services?search=${search}&order=${
+      `https://one-step-auto-zone-server.vercel.app/services?search=${search}&order=${
         isAsc ? "asc" : "desc"
       }`
     )
