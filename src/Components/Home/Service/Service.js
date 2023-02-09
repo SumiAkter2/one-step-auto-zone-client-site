@@ -1,14 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Services from "./Services";
 
 const Service = () => {
   const [services, setServices] = useState([]);
+  const [search, setSearch] = useState("");
   const [isAsc, setIsAsc] = useState(true);
+  const searchRef = useRef();
   useEffect(() => {
-    fetch(`http://localhost:5000/services?order=${isAsc ? "asc" : "desc"}`)
+    fetch(
+      `http://localhost:5000/services?search=${search}&order=${
+        isAsc ? "asc" : "desc"
+      }`
+    )
       .then((res) => res.json())
       .then((data) => setServices(data));
-  }, [isAsc]);
+  }, [isAsc, search]);
+  const handleInput = () => {
+    setSearch(searchRef.current.value);
+  };
   return (
     <div>
       <p className="text-sm font-bold text-secondary text-center"> Service</p>
@@ -17,7 +26,16 @@ const Service = () => {
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
         corporis cum hic doloremque. Esse nisi cupiditate, blanditiis alias
       </p>
-      <div className=" flex justify-center items-center my-4">
+      <div className=" flex justify-center items-center my-4 gap-x-4">
+        <input
+          type="text"
+          className="input input-secondary"
+          placeholder="Search"
+          ref={searchRef}
+        />
+        <button onClick={handleInput} className="btn btn-secondary  w-32">
+          search
+        </button>
         <button
           onClick={() => setIsAsc(!isAsc)}
           className="btn btn-secondary btn-outline w-32"
