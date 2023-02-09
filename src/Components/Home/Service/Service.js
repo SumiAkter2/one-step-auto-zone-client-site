@@ -17,7 +17,14 @@ const Service = () => {
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
         corporis cum hic doloremque. Esse nisi cupiditate, blanditiis alias
       </p>
-
+      <div className=" flex justify-center items-center my-4">
+        <button
+          onClick={() => setIsAsc(!isAsc)}
+          className="btn btn-secondary btn-outline w-32"
+        >
+          {isAsc ? "ASC" : "DESC"}
+        </button>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-12 gap-4">
         {services.map((service) => (
           <Services key={service._id} service={service}></Services>
