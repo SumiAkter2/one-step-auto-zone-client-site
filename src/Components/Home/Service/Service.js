@@ -8,7 +8,7 @@ const Service = () => {
     fetch(`http://localhost:5000/services?order=${isAsc ? "asc" : "desc"}`)
       .then((res) => res.json())
       .then((data) => setServices(data));
-  }, []);
+  }, [isAsc]);
   return (
     <div>
       <p className="text-sm font-bold text-secondary text-center"> Service</p>
@@ -22,7 +22,7 @@ const Service = () => {
           onClick={() => setIsAsc(!isAsc)}
           className="btn btn-secondary btn-outline w-32"
         >
-          {isAsc ? "ASC" : "DESC"}
+          {isAsc ? "DESC" : "ASC"}
         </button>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-12 gap-4">
