@@ -2,37 +2,37 @@
   {
     "id": 1,
     "price": "$40",
-    "title": "Health and Fitness Tips",
-    "imageURL": "https://i.ibb.co/gWHb5GQ/ipod.jpg"
+    "title": "Strong Tier",
+    "imageURL": "https://i.ibb.co/1qY8vHt/5.png"
   },
   {
     "id": 2,
     "price": "$15",
-    "title": "Membership Card",
-    "imageURL": "https://i.ibb.co/gWHb5GQ/ipod.jpg"
+    "title": "Generator",
+    "imageURL": "https://i.ibb.co/JQb6g1y/4.png"
   },
   {
     "id": 3,
     "price": "$10",
-    "title": "Health and Fitness Tips",
-    "imageURL": "https://i.ibb.co/gWHb5GQ/ipod.jpg"
+    "title": "Cool Light",
+    "imageURL": "https://i.ibb.co/R0gyfKK/3.png"
   },
   {
     "id": 4,
     "price": "$20",
-    "title": "Health and Fitness Tips",
-    "imageURL": "https://i.ibb.co/gWHb5GQ/ipod.jpg"
+    "title": "Red Cutter",
+    "imageURL": "https://i.ibb.co/2PJSKk0/2.png"
   },
   {
     "id": 5,
     "price": "$30",
-    "title": "Health and Fitness Tips",
-    "imageURL": "https://i.ibb.co/gWHb5GQ/ipod.jpg"
+    "title": "Nuts And Bolt",
+    "imageURL": "https://i.ibb.co/F6VTDH2/6.png"
   },
   {
     "id": 6,
     "price": "$200",
-    "title": "Health and Fitness Tips",
-    "imageURL": "https://i.ibb.co/gWHb5GQ/ipod.jpg"
+    "title": "Auto Cutter",
+    "imageURL": "https://i.ibb.co/mDtmk1L/1.png"
   }
 ]
