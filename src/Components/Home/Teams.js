@@ -27,7 +27,7 @@ const Teams = () => {
   return (
     <div className="text-center">
       <small className="text-secondary font-bold"> Team Members</small>
-      <h1 className="font-bold text-4xl">Meet Our Team</h1>
+      <h1 className="font-bold text-4xl mb-6">Meet Our Team</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod nostrum
         maiores quibusdam. Qui labore repudiandae animi eaque, ut tenetur
