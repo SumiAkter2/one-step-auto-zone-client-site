@@ -18,7 +18,7 @@ const PopularProduct = () => {
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab eius iusto
         earum, expedita aperiam facere assumenda eum Lorem ipsum dolor sit amet.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-12 gap-x-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-12 ">
         {products.map((service) => (
           <PopularProducts
             key={service._id}
