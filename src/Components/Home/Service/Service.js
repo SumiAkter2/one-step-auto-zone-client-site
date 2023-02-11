@@ -20,8 +20,8 @@ const Service = () => {
   };
   return (
     <div>
-      <p className="text-sm font-bold text-secondary text-center"> Service</p>
-      <h1 className="text-3xl font-bold text-center my-4">Our Service Area</h1>
+      <p className="text-sm font-bold text-secondary text-center mt-12"> Service</p>
+      <h1 className="text-3xl font-bold text-center mb-4">Our Service Area</h1>
       <p className=" text-center">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
         corporis cum hic doloremque. Esse nisi cupiditate, blanditiis alias
@@ -43,7 +43,7 @@ const Service = () => {
           {isAsc ? "DESC" : "ASC"}
         </button>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-12 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-12 gap-x-4">
         {services.map((service) => (
           <Services key={service._id} service={service}></Services>
         ))}
