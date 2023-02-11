@@ -2,6 +2,7 @@ import React from "react";
 import About from "./About";
 import Banner from "./Banner/Banner";
 import Contact from "./Contact";
+import Features from "./Features";
 import PopularProduct from "./PopularProduct/PopularProduct";
 import Service from "./Service/Service";
 import Teams from "./Teams";
@@ -15,6 +16,7 @@ function Home() {
       <Contact />
       <PopularProduct />
       <Teams />
+      <Features />
     </div>
   );
 }

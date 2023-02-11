@@ -4,7 +4,7 @@ import { BiPhoneCall } from "react-icons/bi";
 import { MdLocationPin } from "react-icons/md";
 const Contact = () => {
   return (
-    <div className="flex justify-around items-center bg-black my-6 lg:p-12 p-6 text-primary">
+    <div className="flex justify-around items-center bg-black my-6 lg:p-24 p-6 text-primary">
       <div className="flex justify-between items-center">
         <div className="mr-4">
           <GoCalendar size="30px" fill="red" />
