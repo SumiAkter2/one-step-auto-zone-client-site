@@ -26,6 +26,9 @@ const PopularProduct = () => {
           ></PopularProducts>
         ))}
       </div>
+      <div className="flex justify-center items-center mb-12">
+        <button className="btn btn-outline w-48 btn-secondary">View Site</button>
+      </div>
     </div>
   );
 };
