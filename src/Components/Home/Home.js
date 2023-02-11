@@ -4,6 +4,7 @@ import Banner from "./Banner/Banner";
 import Contact from "./Contact";
 import PopularProduct from "./PopularProduct/PopularProduct";
 import Service from "./Service/Service";
+import Teams from "./Teams";
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
       <Service />
       <Contact />
       <PopularProduct />
+      <Teams />
     </div>
   );
 }
