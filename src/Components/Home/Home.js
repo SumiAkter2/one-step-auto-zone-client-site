@@ -2,6 +2,7 @@ import React from "react";
 import About from "./About";
 import Banner from "./Banner/Banner";
 import Contact from "./Contact";
+import PopularProduct from "./PopularProduct/PopularProduct";
 import Service from "./Service/Service";
 
 function Home() {
@@ -11,6 +12,7 @@ function Home() {
       <About />
       <Service />
       <Contact />
+      <PopularProduct />
     </div>
   );
 }
