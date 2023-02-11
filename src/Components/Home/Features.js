@@ -8,7 +8,7 @@ import features6 from "../../assets/icons/Wrench.svg";
 import features7 from "../../assets/icons/group.svg";
 import Feature from "./Feature";
 const Features = () => {
-  const features = [
+  const featuresInfo = [
     {
       id: 1,
       name: "Leo Kito",
@@ -62,12 +62,11 @@ const Features = () => {
           maiores quibusdam. Qui labore repudiandae animi eaque, ut tenetur
           dolorem repellat.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-12 gap-x-4">
-          {features.map((feature) => (
-            <Feature key={feature.id} feature={feature}></Feature>
-          ))}
-        </div>
       </div>
+
+      {featuresInfo.map((featureInfo) => (
+        <Feature key={featureInfo.id} featureInfo={featureInfo}></Feature>
+      ))}
     </div>
   );
 };

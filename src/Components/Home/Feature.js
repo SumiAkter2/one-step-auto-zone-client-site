@@ -1,12 +1,10 @@
 import React from "react";
 
-function Feature(feature) {
-  return (
-    <div>
-      <img src={feature.img} alt="" />
-      <h1> {feature.title}</h1>
-    </div>
-  );
-}
+const Feature = (featureInfo) => {
+    console.log('dhjsgfkasgekjew')
+    return <div>
+      <h1>{featureInfo.name } </h1>
+  </div>;
+};
 
 export default Feature;
