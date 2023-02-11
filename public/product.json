@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "price": "$40",
+    "title": "Health and Fitness Tips",
+    "imageURL": "https://i.ibb.co/gWHb5GQ/ipod.jpg"
+  },
+  {
+    "id": 2,
+    "price": "$15",
+    "title": "Membership Card",
+    "imageURL": "https://i.ibb.co/gWHb5GQ/ipod.jpg"
+  },
+  {
+    "id": 3,
+    "price": "$10",
+    "title": "Health and Fitness Tips",
+    "imageURL": "https://i.ibb.co/gWHb5GQ/ipod.jpg"
+  },
+  {
+    "id": 4,
+    "price": "$20",
+    "title": "Health and Fitness Tips",
+    "imageURL": "https://i.ibb.co/gWHb5GQ/ipod.jpg"
+  },
+  {
+    "id": 5,
+    "price": "$30",
+    "title": "Health and Fitness Tips",
+    "imageURL": "https://i.ibb.co/gWHb5GQ/ipod.jpg"
+  },
+  {
+    "id": 6,
+    "price": "$200",
+    "title": "Health and Fitness Tips",
+    "imageURL": "https://i.ibb.co/gWHb5GQ/ipod.jpg"
+  }
+]
