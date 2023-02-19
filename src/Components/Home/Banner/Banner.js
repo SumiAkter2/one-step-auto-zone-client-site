@@ -2,12 +2,12 @@ import React from "react";
 import banner1 from "../../../assets/images/banner/3.jpg";
 import banner2 from "../../../assets/images/banner/4.jpg";
 import banner3 from "../../../assets/images/banner/5.jpg";
-import banner4 from "../../../assets/images/banner/6.jpg";
+import banner4 from "../../../assets/images/banner/7.jpg";
 import BannerItem from "./BannerItem";
 const Banner = () => {
   const bannerImage = [
     {
-      img: banner1,
+      img: banner4,
       prev: 6,
       id: 1,
       next: 2,
@@ -27,7 +27,7 @@ const Banner = () => {
     },
 
     {
-      img: banner4,
+      img: banner1,
       prev: 3,
       id: 4,
       next: 1,
