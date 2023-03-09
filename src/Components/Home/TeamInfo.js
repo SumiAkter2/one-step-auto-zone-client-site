@@ -15,22 +15,22 @@ const TeamInfo = ({ team }) => {
           <FaFacebookF
             size="25px"
             color="white"
-            className="bg-blue-800 rounded-full p-1"
-          />{" "}
+            className="bg-blue-800 rounded-full p-1 cursor-pointer"
+          />
           <BsTwitter
             size="25px"
             color="white"
-            className="bg-blue-400 rounded-full p-1"
+            className="bg-blue-400 rounded-full p-1 cursor-pointer"
           />
           <BsInstagram
             size="25px"
             color="white"
-            className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full p-1"
+            className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full p-1 cursor-pointer"
           />{" "}
           <FaWhatsapp
             size="25px"
             color="white"
-            className="bg-green-400 rounded-full p-1"
+            className="bg-green-400 rounded-full p-1 cursor-pointer"
           />
         </p>
       </div>
