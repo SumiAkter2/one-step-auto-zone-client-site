@@ -11,21 +11,25 @@ const BannerItem = ({ slide }) => {
         <img src={img} alt="" className="w-screen rounded-xl h-screen" />
       </div>
       <div className="absolute flex justify-end transform -translate-y-1/2 left-24 top-1/4">
-        <h1 className="text-6xl font-bold text-white">
+        <h1 className="lg:text-6xl text-3xl font-bold text-white">
           Affordable <br />
           Price for Car <br />
           Servicing
         </h1>
       </div>
       <div className="absolute flex justify-end transform -translate-y-1/2 w-2/5 left-24 top-1/2">
-        <p className="text-xl  text-primary">
+        <p className="text-xl mt-6 text-primary">
           There are many variations of passages of available, but the majority
           have suffered alteration in some form
         </p>
       </div>
-      <div className="absolute flex justify-start transform -translate-y-1/2 w-2/5 left-24 top-3/4">
-        <button className="btn btn-secondary mr-5">Discover More</button>
-        <button className="btn btn-outline btn-primary">New Project</button>
+      <div className="absolute lg:flex justify-start transform -translate-y-1/2 w-2/5 left-24 top-3/4  lg:mt-0">
+        <button className="btn btn-secondary mr-5 mt-6 lg:mt-0">
+          Discover More
+        </button>
+        <button className="btn btn-outline btn-primary mt-6 lg:mt-0">
+          New Project
+        </button>
       </div>
       <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-24">
         <a href={`#slide${prev}`} className="btn btn-circle btn-primary mr-5">

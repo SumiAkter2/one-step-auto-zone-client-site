@@ -1,9 +1,8 @@
 import React from "react";
 import features1 from "../../assets/icons/check.svg";
 import features2 from "../../assets/icons/deliveryt.svg";
-import features3 from "../../assets/icons/Group 38729.svg";
+
 import features4 from "../../assets/icons/person.svg";
-import features5 from "../../assets/icons/quote.svg";
 import features6 from "../../assets/icons/Wrench.svg";
 import features7 from "../../assets/icons/group.svg";
 import Feature from "./Feature";
@@ -12,38 +11,33 @@ const Features = () => {
     {
       id: 1,
       name: "Leo Kito",
-      title: "Engine Expert",
+      title: "100% Guaranty",
       img: features1,
     },
     {
       id: 2,
       name: "Jony Luis",
-      title: "Engine Expert",
+      title: "Timely Delivery",
       img: features2,
     },
     {
       id: 3,
       name: "Pathio Kio",
-      title: "Engine Expert",
-      img: features3,
+      title: "Best Equipment",
+      img: features6,
     },
-    {
-      id: 4,
-      name: "Pathio Kio",
-      title: "Engine Expert",
-      img: features4,
-    },
-    {
-      id: 5,
-      name: "Pathio Kio",
-      title: "Engine Expert",
-      img: features5,
-    },
+    // {
+    //   id: 4,
+    //   name: "Pathio Kio",
+    //   title: "Engine Expert",
+    //   img: features4,
+    // },
+
     {
       id: 6,
       name: "Pathio Kio",
-      title: "Engine Expert",
-      img: features6,
+      title: "24/7 Support",
+      img: features4,
     },
     {
       id: 7,
@@ -64,9 +58,11 @@ const Features = () => {
         </p>
       </div>
 
-      {featuresInfo.map((featureInfo) => (
-        <Feature key={featureInfo.id} featureInfo={featureInfo}></Feature>
-      ))}
+      <div className="grid grid-cols-1 lg:grid-cols-5 md:grid-cols-3 my-12 mx-auto gap-4 px-6 lg:w-2/3 w-full">
+        {featuresInfo.map((featureInfo) => (
+          <Feature key={featureInfo.id} featureInfo={featureInfo}></Feature>
+        ))}
+      </div>
     </div>
   );
 };
