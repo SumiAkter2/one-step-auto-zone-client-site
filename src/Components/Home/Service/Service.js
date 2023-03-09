@@ -19,26 +19,34 @@ const Service = () => {
     setSearch(searchRef.current.value);
   };
   return (
-    <div>
-      <p className="text-sm font-bold text-secondary text-center mt-12"> Service</p>
+    <div className="my-56 lg:my-6">
+      <p className="text-sm font-bold text-secondary text-center mt-12">
+        {" "}
+        Service
+      </p>
       <h1 className="text-3xl font-bold text-center mb-4">Our Service Area</h1>
       <p className=" text-center">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-        corporis cum hic doloremque. Esse nisi cupiditate, blanditiis alias
+        corporis cum hic doloremque.
       </p>
-      <div className=" flex justify-center items-center my-4 gap-x-4">
+      <div className=" lg:flex justify-center items-center my-4 gap-6 lg:w-1/2 mx-auto align-middle px-6 ">
         <input
           type="text"
-          className="input input-secondary"
+          className="input input-secondary  mx-auto mb-4"
           placeholder="Search"
           ref={searchRef}
         />
-        <button onClick={handleInput} className="btn btn-secondary  w-32">
+    
+        <button
+          onClick={handleInput}
+          className="btn btn-secondary w-32 mx-auto "
+        >
           search
         </button>
+        <br />
         <button
           onClick={() => setIsAsc(!isAsc)}
-          className="btn btn-secondary btn-outline w-32"
+          className="btn btn-secondary btn-outline w-32 mx-auto mt-4"
         >
           {isAsc ? "DESC" : "ASC"}
         </button>
