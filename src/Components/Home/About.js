@@ -6,21 +6,21 @@ const About = () => {
     <div>
       <div className="hero bg-gray-100 mb-24">
         <div className="hero-content flex-col lg:flex-row">
-          <div className="w-2/5 relative p-6 h-96">
+          <div className="lg:w-2/5 relative p-6 h-96">
             <img
               alt="banner-img"
               src={img1}
-              className="rounded-lg shadow-2xl h-full"
+              className="rounded-lg shadow-2xl h-full "
             />
             <img
               alt="banner-img"
               src={img2}
-              className="absolute top-1/2 right-[-40px] rounded-lg shadow-2xl h-2/3 w-2/3 border-8  border-primary"
+              className="absolute top-1/2 lg:right-[-40px] right-[60px] rounded-lg shadow-2xl h-2/3 w-2/3  border-8  border-primary"
             />
           </div>
-          <div className="w-3/5 px-12 h-96 py-6">
-            <p className="text-secondary text-xl font-bold">About Us</p>
-            <h1 className="text-5xl font-bold my-2">
+          <div className="lg:w-3/5 px-12 h-96 lg:py-6 py-12">
+            <p className="text-secondary text-xl font-bold mt-6">About Us</p>
+            <h1 className="lg:text-5xl text-3xl font-bold my-2">
               We are qualified <br />& of experience <br /> in this field
             </h1>
             <p className="py-6">
@@ -31,7 +31,7 @@ const About = () => {
               suscipit illo corrupti maiores, nihil incidunt debitis? Quos totam
               quasi commodi asperiores officia dolore vel. Lorem ipsum dolor sit
             </p>
-            <button className="btn btn-secondary  ">Get Started</button>
+            <button className="btn btn-secondary  mb-12">Get Started</button>
           </div>
         </div>
       </div>
