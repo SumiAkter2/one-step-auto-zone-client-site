@@ -19,7 +19,7 @@ const Service = () => {
     setSearch(searchRef.current.value);
   };
   return (
-    <div className="my-56 lg:my-6">
+    <div className="mt-56 lg:my-6">
       <p className="text-sm font-bold text-secondary text-center mt-12">
         {" "}
         Service
