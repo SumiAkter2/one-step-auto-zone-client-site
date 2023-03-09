@@ -5,7 +5,7 @@ const PopularProducts = ({ service }) => {
   return (
     <div>
       <div className="card card-compact lg:w-80 my-6 mx-auto">
-        <figure>
+        <figure data-aos="zoom-in-down" data-aos-duration="1500">
           <img
             src={service.imageURL}
             alt="service-img"

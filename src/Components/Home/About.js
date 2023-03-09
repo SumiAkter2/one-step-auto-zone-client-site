@@ -6,7 +6,12 @@ const About = () => {
     <div>
       <div className="hero bg-gray-100 mb-24">
         <div className="hero-content flex-col lg:flex-row">
-          <div className="lg:w-2/5 relative p-6 h-96">
+          <div
+            className="lg:w-2/5 relative p-6 h-96"
+            data-aos="fade-down"
+            data-aos-duration="1000"
+            data-aos-easing="ease-out-cubic"
+          >
             <img
               alt="banner-img"
               src={img1}
@@ -18,7 +23,12 @@ const About = () => {
               className="absolute top-1/2 lg:right-[-40px] right-[60px] rounded-lg shadow-2xl h-2/3 w-2/3  border-8  border-primary"
             />
           </div>
-          <div className="lg:w-3/5 px-12 h-96 lg:py-6 py-12">
+          <div
+            className="lg:w-3/5 px-12 h-96 lg:py-6 py-12 "
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-easing="ease-out-cubic"
+          >
             <p className="text-secondary text-xl font-bold mt-6">About Us</p>
             <h1 className="lg:text-5xl text-3xl font-bold my-2">
               We are qualified <br />& of experience <br /> in this field

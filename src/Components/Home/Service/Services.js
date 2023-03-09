@@ -5,7 +5,7 @@ const Services = ({ service }) => {
   return (
     <div>
       <div className="card card-compact lg:w-96 bg-base-400 shadow-xl my-6 ">
-        <figure>
+        <figure data-aos="zoom-in-down" data-aos-duration="1500">
           <img
             src={service.img}
             alt="service-img"

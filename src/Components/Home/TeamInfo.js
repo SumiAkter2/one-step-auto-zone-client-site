@@ -8,7 +8,13 @@ const TeamInfo = ({ team }) => {
   return (
     <div className="my-12 w-80 mx-auto">
       <div>
-        <img className="rounded-2xl " src={team.img} alt="team-person-img" />
+        <img
+          data-aos="fade-down-right"
+          data-aos-duration="1500"
+          className="rounded-2xl "
+          src={team.img}
+          alt="team-person-img"
+        />
         <h1 className="text-2xl font-bold mt-4">{team.name} </h1>
         <h1>{team.title} </h1>
         <p className="flex justify-center items-center gap-x-4 my-2">

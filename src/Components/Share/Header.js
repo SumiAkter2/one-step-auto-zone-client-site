@@ -61,10 +61,10 @@ const Header = () => {
           </div>
           <a
             href="/"
-            className="flex justify-center items-center uppercase text-xl font-bold"
+            className="flex justify-center items-center uppercase lg:text-xl  text-xs font-bold text-secondary "
           >
-            <img src={logo} alt="" className="w-20" />
-            One Step Auto Zone
+            <img src={logo} alt="brand-logo" className="w-20" />
+            {/* {} */}
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
